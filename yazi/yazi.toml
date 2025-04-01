@@ -1,0 +1,3 @@
+[manager]
+
+open = "nvim --cmd 'tabnew'"
