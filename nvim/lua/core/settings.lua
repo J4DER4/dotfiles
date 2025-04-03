@@ -40,7 +40,7 @@ vim.opt.shiftwidth = spaces
 vim.opt.expandtab = true
 
 -- Linewrap
-vim.opt.wrap = false
+vim.opt.wrap = true
 vim.opt.linebreak = true
 vim.opt.showbreak = "↳"
 

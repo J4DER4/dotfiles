@@ -81,16 +81,17 @@ return {
 
 		ins_left({
 			function()
-				return "▊"
+				-- return "▊"
+				return " "
 			end,
-			color = { fg = colors.blue }, -- Sets highlighting of component
+			color = { fg = colors.violet }, -- Sets highlighting of component
 			padding = { left = 0, right = 1 }, -- We don't need space before this
 		})
 
 		ins_left({
 			-- mode component
 			function()
-				return ""
+				return ""
 			end,
 			color = function()
 				-- auto change color according to neovims mode
@@ -121,51 +122,18 @@ return {
 			padding = { right = 1 },
 		})
 
+		ins_left({
+			"filetype",
+			fmt = string.upper,
+			icons_enabled = false, -- I think icons are cool but Eviline doesn't have them. sigh
+			color = { fg = colors.fg, gui = "bold" },
+		})
+
 		--ins_left {
 		-- filesize component
 		--  'filesize',
 		--  cond = conditions.buffer_not_empty,
 		--}
-
-		ins_left({
-			"filename",
-			cond = conditions.buffer_not_empty,
-			color = { fg = colors.magenta, gui = "bold" },
-		})
-
-		ins_left({ "location" })
-
-		ins_left({ "progress", color = { fg = colors.fg, gui = "bold" } })
-
-		ins_left({
-			"diagnostics",
-			sources = { "nvim_diagnostic" },
-			symbols = { error = " ", warn = " ", info = " " },
-			diagnostics_color = {
-				error = { fg = colors.red },
-				warn = { fg = colors.yellow },
-				info = { fg = colors.cyan },
-			},
-		})
-
-		ins_left({
-			function()
-				local linters = require("lint").get_running()
-				if #linters == 0 then
-					return "󰦕"
-				end
-				return "󱉶 " .. table.concat(linters, ", ")
-			end,
-		})
-
-		-- Insert mid section. You can make any number of sections in neovim :)
-		-- for lualine it's any number greater then 2
-		ins_left({
-			function()
-				return "%="
-			end,
-		})
-
 		ins_left({
 			-- Lsp server name .
 			function()
@@ -184,23 +152,47 @@ return {
 				return msg
 			end,
 			icon = " LSP:",
-			color = { fg = "#ffffff", gui = "bold" },
+			color = { fg = colors.fg, gui = "bold" },
+		})
+		ins_left({
+			function()
+				local linters = require("lint").get_running()
+				if #linters == 0 then
+					return "Lint: 󰦕"
+				end
+				return "Lint: 󱉶 " .. table.concat(linters, ", ")
+			end,
+			color = { colors.blue, gui = "bold" },
 		})
 
+		ins_right({
+			"diagnostics",
+			sources = { "nvim_diagnostic" },
+			symbols = { error = " ", warn = " ", info = " " },
+			diagnostics_color = {
+				error = { fg = colors.red },
+				warn = { fg = colors.yellow },
+				info = { fg = colors.cyan },
+			},
+		})
+
+		-- Insert mid section. You can make any number of sections in neovim :)
+		-- for lualine it's any number greater then 2
+		ins_left({
+			function()
+				return "%="
+			end,
+		})
+
+		ins_left({
+			"filename",
+			cond = conditions.buffer_not_empty,
+			color = { fg = colors.magenta, gui = "bold" },
+		})
+
+		ins_right({ "location" })
 		-- Add components to right sections
-		ins_right({
-			"o:encoding", -- option component same as &encoding in viml
-			fmt = string.upper, -- I'm not sure why it's upper case either ;)
-			cond = conditions.hide_in_width,
-			color = { fg = colors.green, gui = "bold" },
-		})
-
-		ins_right({
-			"fileformat",
-			fmt = string.upper,
-			icons_enabled = false, -- I think icons are cool but Eviline doesn't have them. sigh
-			color = { fg = colors.green, gui = "bold" },
-		})
+		ins_right({ "progress", color = { fg = colors.fg, gui = "bold" } })
 
 		ins_right({
 			"branch",
@@ -222,9 +214,10 @@ return {
 
 		ins_right({
 			function()
-				return "▊"
+				-- return "▊"
+				return " "
 			end,
-			color = { fg = colors.blue },
+			color = { fg = colors.violet },
 			padding = { left = 1 },
 		})
 

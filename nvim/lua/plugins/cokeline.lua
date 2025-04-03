@@ -54,39 +54,5 @@ return {
 				},
 			},
 		})
-
-		local utils = {
-			nnoremap = function(lhs, rhs)
-				vim.keymap.set("n", lhs, rhs, { noremap = true, silent = true })
-			end,
-		}
-		-- Go to buffer at index i
-
-		for i = 1, 9 do
-			utils.nnoremap("<M-" .. i .. ">", "<Plug>(cokeline-focus-" .. i .. ")")
-		end
-
-		-- Swap active with index i
-		for i = 1, 9 do
-			utils.nnoremap("<M-S-" .. i .. ">", "<Plug>(cokeline-switch-" .. i .. ")")
-		end
-
-		-- Close buffer
-		utils.nnoremap("<M-d>", ":bd<Cr>")
-
-		-- Prev buffer
-		utils.nnoremap("<M-j>", "<Plug>(cokeline-focus-prev)")
-
-		-- Next buffer
-		utils.nnoremap("<M-k>", "<Plug>(cokeline-focus-next)")
-
-		-- Switch with prev
-		utils.nnoremap("<M-h>", "<Plug>(cokeline-switch-prev)")
-
-		-- Switch with next
-		utils.nnoremap("<M-l>", "<Plug>(cokeline-switch-next)")
-
-		-- Focus by pick_letter
-		utils.nnoremap("<M-p>", "<Plug>(cokeline-pick-focus)")
 	end,
 }
