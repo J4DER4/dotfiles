@@ -27,20 +27,20 @@ vim.opt.relativenumber = true
 vim.opt.ruler = true
 
 --autoread file updates
-vim.opt.autoread = true
+vim.opt.autoread = false
 
 -- Indentation
 vim.opt.autoindent = true
 vim.opt.smartindent = true
 vim.opt.smarttab = true
-spaces = 4
+local spaces = 4
 vim.opt.tabstop = spaces
 vim.opt.softtabstop = spaces
 vim.opt.shiftwidth = spaces
 vim.opt.expandtab = true
 
 -- Linewrap
-vim.opt.wrap = true
+vim.opt.wrap = false
 vim.opt.linebreak = true
 vim.opt.showbreak = "↳"
 
@@ -50,4 +50,4 @@ vim.opt.sidescrolloff = 15
 vim.opt.sidescroll = 5
 
 -- lazy redraw stuff
-vim.opt.lazyredraw = true
+vim.opt.lazyredraw = false

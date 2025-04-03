@@ -12,6 +12,7 @@ return { -- Formatting tool, formats files on save, fixes consistent style with 
 			formatters_by_ft = { -- IMPORTANT, These also need to be installed trough Mason (Tab 5)!
 				lua = { "stylua" },
 				python = { "black" },
+				asm = { "asmfmt" },
 			},
 			format_on_save = {
 				lsp_fallback = true, --use lsp if format is non available
