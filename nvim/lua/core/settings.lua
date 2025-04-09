@@ -25,7 +25,7 @@ vim.wo.signcolumn = "yes"
 vim.wo.number = true
 vim.opt.relativenumber = true
 vim.opt.ruler = true
-
+vim.opt.cursorline = true
 --autoread file updates
 vim.opt.autoread = false
 
