@@ -28,9 +28,9 @@ return {
 
                 -- mark = false,
             },
-            --[[ completion = {
-                skip_after = { "\t", "\n", " ", "(", ")", "[", "]", "{", "}" },
-            }, ]]
+            completion = {
+                skip_after = { '"', ")", "]", "}", "\t" },
+            },
         }
     end,
 }
