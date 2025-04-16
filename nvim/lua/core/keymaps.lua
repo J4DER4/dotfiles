@@ -18,6 +18,8 @@ vim.keymap.set("n", "<leader><Tab>", "I<Tab><Esc>", { silent = true, desc = "Ins
 vim.keymap.set("n", "<leader>x", ":.lua<cr>") -- execute current line (lua only)
 vim.keymap.set("v", "<leader>x", ":lua<cr>") -- execute current line (lua only)
 
+vim.keymap.set("n", "<leader>b", "<C-o>") -- jump to previous spot
+
 --LSP SPESIFIC
 vim.keymap.set("n", "<leader>f", function() --format by lsp
     vim.lsp.buf.format()
@@ -32,7 +34,7 @@ end)
 vim.keymap.set("n", "gD", function() --goto declaration()
     vim.lsp.buf.declaration()
 end)
-vim.keymap.set("n", "gr", "<cmd>Telescope lsp_references<cr>")
+vim.keymap.set("n", "<leader>r", "<cmd>Telescope lsp_references<cr>")
 
 -- TROUBLE
 vim.keymap.set( -- toggle trouble

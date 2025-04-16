@@ -1,10 +1,9 @@
 * {
     /* `otf-font-awesome` and SpaceMono Nerd Font are required to be installed for icons */
-    font-family: "Fira Sans Semibold", FontAwesome, Roboto, Helvetica, Arial, sans-serif;
+    font-family: "SauceCodeProNerdFont-SemiBold", FontAwesome, Roboto, Helvetica, Arial, sans-serif;
     font-size: 15px;
     transition: background-color .3s ease-out;
 }
-
 window#waybar {
     background: rgba(26, 27, 38, 0.75);
     color: #c0caf5;
@@ -21,7 +20,7 @@ window#waybar {
     background: rgba(0, 0, 8, .7);
     margin: 5px 10px;
     padding: 0 5px;
-    border-radius: 15px;
+    border-radius: 5px;
 }
 .modules-left {
     padding: 0;
@@ -49,7 +48,7 @@ window#waybar {
 #language,
 #mpd {
     padding: 0 10px;
-    border-radius: 15px;
+    border-radius: 5px;
 }
 
 #clock:hover,
